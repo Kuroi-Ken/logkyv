@@ -14,8 +14,8 @@
     position: absolute;
     top: 0;
     left: 100%;
-    width: 100%;
-    height: 100%;
+    width: 90vh;
+    height: 90vh;
     transform-origin: left top;
     transform: rotate(90deg);
     }
