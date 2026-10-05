@@ -11,13 +11,13 @@
       overflow: hidden;
     }
     #orientation-lock {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100vh;
-      height: 100vw;
-      transform-origin: left top;
-      transform: rotate(90deg);
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100vh;
+    height: 100vw;
+    transform-origin: left top;
+    transform: rotate(90deg);
     }
   }
 </style>
