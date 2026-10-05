@@ -1,6 +1,6 @@
 <x-layout :hideheader="true">
 
-    <div  class="mx-auto flex h-screen w-screen lg:gap-30 max-w-6xl items-center px-8">
+    <div id="orientation-lock" class="mx-auto flex h-screen w-screen lg:gap-30 max-w-6xl items-center px-8">
 
         <main class="flex w-3/5 flex-col items-center text-center">
 

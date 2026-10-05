@@ -14,11 +14,23 @@
     position: absolute;
     top: 0;
     left: 100%;
-    width: 90vw;
-    height: 90vw;
+    width: 95vh;
+    height: 95vw;
     transform-origin: left top;
     transform: rotate(90deg);
     }
+
+    #orientation-header {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100vh;
+    height: 15vw;
+    transform-origin: left top;
+    transform: rotate(90deg);
+    }
+
+
   }
 </style>
 
@@ -41,17 +53,15 @@
 </head>
 
 <body class="">
-    <div id="orientation-lock">
-        <x-landscape>
-            
-        </x-landscape>
+    <x-landscape>
+        
+    </x-landscape>
 
-        @if ($hideheader ?? true)    
-        <x-header></x-header>
-        @endif
+    @if ($hideheader ?? true)    
+    <x-header ></x-header>
+    @endif
 
-        {{ $slot }}
-    </div>
+    {{ $slot }}
 
     <script>
         feather.replace();

@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="w-screen h-screen overflow-hidden flex flex-col">
+    <div id="orientation-lock" class="w-screen h-screen overflow-hidden flex flex-col">
         <img
             src="{{ asset('assets/classroom.jpg') }}"
             class="absolute inset-0 -z-10 w-full h-[70%] object-cover"
