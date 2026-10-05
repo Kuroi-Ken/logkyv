@@ -14,8 +14,8 @@
     position: absolute;
     top: 0;
     left: 100%;
-    width: 100vh;
-    height: 100vw;
+    width: 100%;
+    height: 100%;
     transform-origin: left top;
     transform: rotate(90deg);
     }
@@ -41,15 +41,17 @@
 </head>
 
 <body class="">
-    <x-landscape>
-        
-    </x-landscape>
+    <div id="orientation-lock">
+        <x-landscape>
+            
+        </x-landscape>
 
-    @if ($hideheader ?? true)    
-    <x-header></x-header>
-    @endif
+        @if ($hideheader ?? true)    
+        <x-header></x-header>
+        @endif
 
-    {{ $slot }}
+        {{ $slot }}
+    </div>
 
     <script>
         feather.replace();
