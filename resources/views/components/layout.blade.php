@@ -17,7 +17,7 @@
       width: 100vh;
       height: 100vw;
       transform-origin: left top;
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
     }
   }
 </style>
