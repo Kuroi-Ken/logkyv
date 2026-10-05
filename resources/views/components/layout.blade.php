@@ -7,16 +7,17 @@
     html, body {
       width: 100vw;
       height: 100vh;
+      margin: 0;
       overflow: hidden;
     }
     #orientation-lock {
-      position: fixed;
-      top: 0;
+      position: absolute;
+      top: 100%;
       left: 0;
       width: 100vh;
       height: 100vw;
-      transform-origin: top left;
-      transform: rotate(90deg) translateY(-100%);
+      transform-origin: left top;
+      transform: rotate(-90deg);
     }
   }
 </style>
