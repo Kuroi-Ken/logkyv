@@ -2,6 +2,25 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+<style>
+  @media screen and (max-width: 900px) and (orientation: portrait) {
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #orientation-lock {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vh;
+      height: 100vw;
+      transform-origin: top left;
+      transform: rotate(90deg) translateY(-100%);
+    }
+  }
+</style>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
