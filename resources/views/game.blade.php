@@ -50,7 +50,7 @@
                 class="absolute bottom-0 left-0 z-20 w-full pointer-events-none">
                 <img
                     id="avatar"
-                    class="w-40 h-40 object-contain drop-shadow-lg"
+                    class="w-40 h-40 lg:w-60 lg:h-60 object-contain drop-shadow-lg"
                     src=""
                     alt="">
             </div>
@@ -93,9 +93,6 @@
                     id="options"
                     class="flex flex-col"></div>
 
-                <div
-                    id="feedback"
-                    class="text-[13px] mt-2 min-h-4.5"></div>
 
                 <button
                     id="nextBtn"

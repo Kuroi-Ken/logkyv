@@ -1,9 +1,9 @@
 const nodes = [
-  {type:'dialog', board:'', name:'', text:'(Hari ini adalah hari pertamamu masuk kek kelas AKL sebagai siswa pindahan)'},
-  {type:'dialog', board:'', name:'', text:'(Materi Praktik Akuntansi Lembaga Pemerintah hari ini terasa sulit bagimu untuk dipahami, tetapi kamu takut untuk bertanya dengan guru)'},
-  {type:'dialog', board:'', name:'', text:'. . . . .'},
-  {type:'dialog', board:'', name:'', text:'(Kamu melihat teman didepan mejamu saat ini sedang mencatat sesuatu. Sepertinya dia bisa sedikit membantu)'},
-  {type:'dialog', board:'', name:'', text:'(Tidak ada salahnya mencoba bukan?)'},
+  {type:'dialog', board:'', name:'Narator', text:'(Hari ini adalah hari pertamamu masuk kek kelas AKL sebagai siswa pindahan)'},
+  {type:'dialog', board:'', name:'Narator', text:'(Materi Praktik Akuntansi Lembaga Pemerintah hari ini terasa sulit bagimu untuk dipahami, tetapi kamu takut untuk bertanya dengan guru)'},
+  {type:'dialog', board:'', name:'Narator', text:'. . . . .'},
+  {type:'dialog', board:'', name:'Narator', text:'(Kamu melihat teman didepan mejamu saat ini sedang mencatat sesuatu. Sepertinya dia bisa sedikit membantu)'},
+  {type:'dialog', board:'', name:'Narator', text:'(Tidak ada salahnya mencoba bukan?)'},
   {type:'dialog', board:'', avatar:'/assets/male.png', name:'???', text:'Hmmm?'},
   {type:'dialog', board:'', avatar:'/assets/male.png', name:'???', text:'Oh hai ada yang bisa kubantu?'},
   {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Oh ya sebelumnya namaku Raka, kamu pasti murid pindahan baru kan?'},
@@ -100,67 +100,71 @@ const nodes = [
       {label:'Ya, karena jurnal finansial dibuat setiap ada transaksi', correct:true, fb:''},
       {label:'Nggak, karena bukan termasuk transaksi berbasis akrusial', correct:false, fb:'Salah, ayo coba baca soalnya lagi.'},
     ]},
-  {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Ya... Bener karena Jurnal Finansial itu dibuat berdasarkan basis krusial. Atau mudahnya setiap ada transaksi.'},
-  {type:'dialog', board:'assets/sk1.2.png', avatar:'/assets/male.png', name:'Raka', text:'Sehingga di Jurnal Finansial dibuat seperti ini.'},
-  {type:'game',board:'assets/sk1.png', avatar:'/assets/male.png', name:'Raka',
-    text:'Lalu 14.000.000 tadi apakah termasuk dalam Laporan Realisasi Anggaran? Jawabannya tidak. Kok bisa?',
+    {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Ya... Bener karena Jurnal Finansial itu dibuat berdasarkan basis krusial. Atau mudahnya setiap ada transaksi.'},
+    {type:'dialog', board:'assets/sk1.2.png', avatar:'/assets/male.png', name:'Raka', text:'Sehingga di Jurnal Finansial dibuat seperti ini.'},
+    {type:'game',board:'assets/sk1.png', avatar:'/assets/male.png', name:'Raka',
+      text:'Lalu 14.000.000 tadi apakah termasuk dalam Laporan Realisasi Anggaran? Jawabannya tidak. Kok bisa?',
+      options:[
+        {label:'Karena pajak sudah diterbitkan dan sudah dibayar', correct:false, fb:'Bukan.... kalau pajak sudah dibayar jelas anggaran sudah terealisasi jadi pasti masuk ke dalam Jurnal Pelaksanaan Anggaran.'},
+        {label:'Karena belum ada kas masuk. SKPD masih berupa rencana sehingga belum ada kas yang diterima', correct:true, fb:''},
+      ]},
+      {type:'dialog', board:'assets/sk1.png', avatar:'/assets/male.png', name:'Raka', text:'Betul lagi. Karena Pemkot hanya menerbitkan SKPD dan belum ada kas masuk pada saat itu maupun anggaran yang terealisasikan. Sehingga bisa kita kosongkan.'},
+      {type:'dialog', board:'assets/sk2.png', avatar:'/assets/male.png', name:'Raka', text:'Selanjutnya bendahara penerima SKPD menerima pendapatan retribusi parkir. Dari sini jelas bahwa bendahara sudah menerima secara langsung bukan angan-angan atau rencana.'},
+      {type:'dialog', board:'assets/sk2.2.png', avatar:'/assets/male.png', name:'Raka', text:'Jadi Jurnal Finansialnya bisa kita buat seperti ini.'},
+      {type:'dialog', board:'assets/sk2.3.png', avatar:'/assets/male.png', name:'Raka', text:'dan Jurnal Pelaksanaan Anggarannya seperti ini.'},
+      {type:'game',board:'assets/sk3.png', avatar:'/assets/male.png', name:'Raka',
+        text:'Lalu pada soal ini jurnal apa yang perlu kamu buat?',
+        options:[
+          {label:'Jurnal Finansial saja', correct:true, fb:''},
+          {label:'Jurnal Pelaksanaan Anggaran saja', correct:false, fb:'Salah. Ayo baca lagi apakah disoal terjadi perubahan kas?'},
+          {label:'Dua-duanya', correct:false, fb:'Yaaa bener setengah. Tapi coba kamu baca lagi soalnya apakah terjadi perubahan kas?'},
+        ]},
+      {type:'dialog', board:'assets/sk3.1.png', avatar:'/assets/male.png', name:'Raka', text:'Yaa.. Kita cukup membuat Jurnal Finansial saja karena perpindahan rekening kas jelas tidak mengubah nominal kas.'},
+      {type:'game',board:'assets/sk4.png', avatar:'/assets/male.png', name:'Raka',
+        text:'Kita lanjut ke soal yang cukup menjebak. Menurutmu bendahara pengeluaran menerima SP2D-UP sebesar 1.400.000 apakah langsung dibelanjakan?.',
+        options:[
+          {label:'Ya, karena sudah menerima uang persediaannya.', correct:false, fb:'Belum tentu. uang persediaan hanya diterima belum tentu langsung dibelanjakan saat itu.'},
+          {label:'Nggak, karena meskipun sudah menerima uang persediaannya belum tentu langsung dibelanjakan.', correct:true, fb:''},
+        ]},
+        {type:'dialog', board:'assets/sk4.png', avatar:'/assets/male.png', name:'Raka', text:'Benar sekali. Karena uang persediaan hanya diterima bukan berarti dibelanjakan saat itu. Disoal hanya diberikan surat SP2D saja jadi bendahara bisa saja tidak langsung membelanjakan uang tersebut.'},
+        {type:'game',board:'assets/sk4.png', avatar:'/assets/male.png', name:'Raka',
+          text:'Jadi jurnal apa yang perlu dibuat?.',
+          options:[
+            {label:'Jurnal Pelaksanaan Anggaran saja', correct:false, fb:'No no... coba pahami lagi pernyataan sebelumnya.'},
+            {label:'Dua-duanya', correct:false, fb:'Kayanya pilihan ini selalu jadi pilihan kamu biar cari aman? Sayangnya bukan ini jawabannya hahaha.'},
+            {label:'Jurnal Finansial saja', correct:true, fb:''},
+          ]},
+        {type:'dialog', board:'assets/sk4.1.png', avatar:'/assets/male.png', name:'Raka', text:'Benar sekali. Karena uang persediaan hanya diterima bukan berarti dibelanjakan saat itu. Disoal hanya diberikan surat SP2D saja jadi bendahara bisa saja tidak langsung membelanjakan uang tersebut.'},
+        {type:'dialog', board:'assets/sk5.png', avatar:'/assets/male.png', name:'Raka', text:'Nah disini baru kita tahu kalau uang persediaan itu dipakai untuk apa jadi kita bisa membuat Jurnal Pelaksanaan Anggarannya.'},
+        {type:'dialog', board:'assets/sk5.1.png', avatar:'/assets/male.png', name:'Raka', text:'Ini untuk Jurnal Finansialnya.'},
+        {type:'dialog', board:'assets/sk5.2.png', avatar:'/assets/male.png', name:'Raka', text:'Ini untuk Jurnal Pelaksanaan Anggarannya.'},
+        
+  
+  {type:'quiz', board:'', avatar:'/assets/male.png', name:'Raka', q:'1) Kenapa error "No version available for php 8.1" muncul di Railway?',
     options:[
-      {label:'Karena pajak sudah diterbitkan dan sudah dibayar', correct:false, fb:'Bukan.... kalau pajak sudah dibayar jelas anggaran sudah terealisasi jadi pasti masuk ke dalam Jurnal Pelaksanaan Anggaran.'},
-      {label:'Karena belum ada kas masuk. SKPD masih berupa rencana sehingga belum ada kas yang diterima', correct:true, fb:''},
+      {label:'Karena Railpack cuma dukung PHP 8.2+', correct:true},
+      {label:'Karena internet lagi lambat', correct:false},
+      {label:'Karena database belum ada', correct:false}
     ]},
-  {type:'dialog', board:'assets/sk1.png', avatar:'/assets/male.png', name:'Raka', text:'Betul lagi. Karena Pemkot hanya menerbitkan SKPD dan belum ada kas masuk pada saat itu maupun anggaran yang terealisasikan. Sehingga bisa kita kosongkan.'},
-  {type:'dialog', board:'assets/sk2.png', avatar:'/assets/male.png', name:'Raka', text:'Selanjutnya bendahara penerima SKPD menerima pendapatan retribusi parkir. Dari sini jelas bahwa bendahara sudah menerima secara langsung bukan angan-angan atau rencana.'},
-  {type:'dialog', board:'assets/sk2.2.png', avatar:'/assets/male.png', name:'Raka', text:'Jadi Jurnal Finansialnya bisa kita buat seperti ini.'},
-  {type:'dialog', board:'assets/sk2.3.png', avatar:'/assets/male.png', name:'Raka', text:'dan Jurnal Pelaksanaan Anggarannya seperti ini.'},
-  {type:'game',board:'assets/sk3.png', avatar:'/assets/male.png', name:'Raka',
-    text:'Lalu pada soal ini jurnal apa yang perlu kamu buat?',
+  {type:'quiz', board:'/assets/saldo-normal.png', avatar:'/assets/male.png', name:'Raka', q:'2) Apa fungsi "Start Command" dibanding "Build Command"?',
     options:[
-      {label:'Jurnal Finansial saja', correct:true, fb:''},
-      {label:'Jurnal Pelaksanaan Anggaran saja', correct:false, fb:'Salah. Ayo baca lagi apakah disoal terjadi perubahan kas?'},
-      {label:'Dua-duanya', correct:false, fb:'Yaaa bener setengah. Tapi coba kamu baca lagi soalnya apakah terjadi perubahan kas?'},
+      {label:'Sama saja, boleh ditukar', correct:false},
+      {label:'Start Command menjalankan server terus-menerus, Build Command cuma jalan sekali saat build', correct:true},
+      {label:'Start Command cuma untuk database', correct:false}
     ]},
-  {type:'dialog', board:'assets/sk3.1.png', avatar:'/assets/male.png', name:'Raka', text:'Yaa.. Kita cukup membuat Jurnal Finansial saja karena perpindahan rekening kas jelas tidak mengubah nominal kas.'},
-  {type:'game',board:'assets/sk4.png', avatar:'/assets/male.png', name:'Raka',
-    text:'Kita lanjut ke soal yang cukup menjebak. Menurutmu bendahara pengeluaran menerima SP2D-UP sebesar 1.400.000 apakah langsung dibelanjakan?.',
-    options:[
-      {label:'Ya, karena sudah menerima uang persediaannya.', correct:false, fb:'Belum tentu. uang persediaan hanya diterima belum tentu langsung dibelanjakan saat itu.'},
-      {label:'Nggak, karena meskipun sudah menerima uang persediaannya belum tentu langsung dibelanjakan.', correct:true, fb:''},
-    ]},
-  {type:'dialog', board:'assets/sk4.png', avatar:'/assets/male.png', name:'Raka', text:'Benar sekali. Karena uang persediaan hanya diterima bukan berarti dibelanjakan saat itu. Disoal hanya diberikan surat SP2D saja jadi bendahara bisa saja tidak langsung membelanjakan uang tersebut.'},
-  {type:'game',board:'assets/sk4.png', avatar:'/assets/male.png', name:'Raka',
-    text:'Jadi jurnal apa yang perlu dibuat?.',
-    options:[
-      {label:'Jurnal Pelaksanaan Anggaran saja', correct:false, fb:'No no... coba pahami lagi pernyataan sebelumnya.'},
-      {label:'Dua-duanya', correct:false, fb:'Kayanya pilihan ini selalu jadi pilihan kamu biar cari aman? Sayangnya bukan ini jawabannya hahaha.'},
-      {label:'Jurnal Finansial saja', correct:true, fb:''},
-    ]},
-  {type:'dialog', board:'assets/sk4.1.png', avatar:'/assets/male.png', name:'Raka', text:'Benar sekali. Karena uang persediaan hanya diterima bukan berarti dibelanjakan saat itu. Disoal hanya diberikan surat SP2D saja jadi bendahara bisa saja tidak langsung membelanjakan uang tersebut.'},
-  {type:'dialog', board:'assets/sk5.png', avatar:'/assets/male.png', name:'Raka', text:'Nah disini baru kita tahu kalau uang persediaan itu dipakai untuk apa jadi kita bisa membuat Jurnal Pelaksanaan Anggarannya.'},
-  {type:'dialog', board:'assets/sk5.1.png', avatar:'/assets/male.png', name:'Raka', text:'Ini untuk Jurnal Finansialnya.'},
-  {type:'dialog', board:'assets/sk5.2.png', avatar:'/assets/male.png', name:'Raka', text:'Ini untuk Jurnal Pelaksanaan Anggarannya.'},
-  {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Haaaa Akhirnya selesai. Jadi gimana? apa kamu sekarang sudah cukup paham sama materinya?'},
-  {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Kalau kamu masih bingung itu wajar karena selama belajar pasti sulit untuk memahami materi dalam sekali lihat.'},
-  {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Kuncinya adalah kamu ngulangin terus materinya sampai kamu paham.'},
-  {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Karena kalau kamu mau belajar pasti hal seperti ini akan menjadi hal yang biasa bagimu.'},
-  {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Ingat selalu bahwa hasil tidak akan mengkhianati usaha.'},
-  {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Mungkin cuma itu sih kalau dari aku. Ah iya kalau kamu perlu latihan soal kamu bisa minta Renalla.'},
-  {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Semua orang tau kalau dia itu bandar soal latihan & ujian hahaha'},
-  {type:'dialog', board:'', avatar:'/assets/male.png', name:'Raka', text:'Kalau begitu aku duluan ya aku mau ke kantin dulu. Dadah!'},
-  {type:'dialog', board:'', avatar:'', name:'', text:'(Raka melambaikan tangannya dan mempersiapkan langkahnya untuk pergi ke kantin)'},
-    
   {type:'end'}
 ];
 
 const STORAGE_KEY = 'logkyv-novel-state';
 function save(){
-  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify({ i })); }
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify({ i, quizAnswers })); }
   catch(e){ /* storage penuh/diblokir browser, aman diabaikan */ }
 }
 let i = 0;
 let typingTimer = null;
 let optionTimer = null;
 let isTyping = false;
-// const quizAnswers = {};
+const quizAnswers = {};
 const el = id => document.getElementById(id);
 const OPT_BASE = "w-full text-left border rounded-[10px] px-3 py-2.5 text-[13.5px] flex justify-between gap-2 border-black/20 dark:border-white/25 bg-transparent";
 const OPT_GOOD = "border-[#12a15a] text-[#12a15a] dark:border-[#5fd383] dark:text-[#5fd383]";
@@ -225,6 +229,7 @@ function showExplain(n, opt){
 
 el('restart').onclick = () => {
   i = 0;
+  for (const k in quizAnswers) delete quizAnswers[k];
   document.onkeydown = null;   
   render();                    
 };
@@ -303,11 +308,79 @@ function render(){
     });
   }
 
+  // if(n.type==='maze'){
+  //   el('name').textContent = n.name; el('text').textContent = n.text;
+  //   el('nextBtn').style.display='none';
+  //   const grid = [".......","#####.#",".......",".#####.",".#.....",".#.###.","......."];
+  //   let px=0, py=0; const gx=6, gy=6;
+  //   el('avatar').style.display='none';
+  //   const maze = document.createElement('div'); maze.className='grid grid-cols-7 gap-[3px] w-full max-w-[266px] mx-auto';
+  //   el('stage').appendChild(maze);
+  //   const pad = document.createElement('div'); pad.className='grid gap-1 justify-center mt-2.5'; pad.style.gridTemplateColumns='repeat(3,44px)'; pad.style.gridTemplateRows='repeat(3,40px)';
+  //   el('options').appendChild(pad);
+
+  //   function drawMaze(){
+  //     maze.innerHTML='';
+  //     for(let y=0;y<7;y++) for(let x=0;x<7;x++){
+  //       const c=document.createElement('div');
+  //       const wall = grid[y][x]==='#';
+  //       c.className = 'aspect-square rounded flex items-center justify-center text-[15px] ' +
+  //         (wall?'bg-black/25 dark:bg-white/20':(x===gx&&y===gy?'bg-[#12a15a]/20 dark:bg-[#5fd383]/20':'bg-black/5 dark:bg-white/5'));
+  //       if(x===px&&y===py) c.textContent='📦';
+  //       else if(x===gx&&y===gy) c.textContent='🏁';
+  //       maze.appendChild(c);
+  //     }
+  //   }
+  //   function move(dx,dy){
+  //     const nx=px+dx, ny=py+dy;
+  //     if(nx<0||ny<0||nx>6||ny>6) return;
+  //     if(grid[ny][nx]==='#') return;
+  //     px=nx; py=ny; drawMaze();
+  //     if(px===gx&&py===gy){
+  //       el('feedback').textContent='Sampai tujuan!'; el('feedback').className='text-[13px] mt-2 min-h-[18px] text-[#12a15a] dark:text-[#5fd383]';
+  //       el('nextBtn').style.display='inline-block';
+  //       el('nextBtn').onclick=()=>{ document.onkeydown=null; i++; render(); };
+  //     }
+  //   }
+  //   const btn=(label,dx,dy,area)=>{ const b=document.createElement('button'); b.textContent=label;
+  //     b.className='bg-white dark:bg-[#141d33] border border-black/20 dark:border-white/25 rounded-lg flex items-center justify-center text-[15px] active:bg-[#f5b942] active:text-[#241a04]';
+  //     b.style.gridArea=area; b.onclick=()=>move(dx,dy); return b; };
+  //   pad.appendChild(btn('↑',0,-1,'1/2/2/3'));
+  //   pad.appendChild(btn('←',-1,0,'2/1/3/2'));
+  //   pad.appendChild(btn('↓',0,1,'2/2/3/3'));
+  //   pad.appendChild(btn('→',1,0,'2/3/3/4'));
+  //   drawMaze();
+  //   document.onkeydown=(e)=>{
+  //     if(nodes[i]!==n){ document.onkeydown=null; return; }
+  //     if(e.key==='ArrowUp') move(0,-1);
+  //     if(e.key==='ArrowDown') move(0,1);
+  //     if(e.key==='ArrowLeft') move(-1,0);
+  //     if(e.key==='ArrowRight') move(1,0);
+  //   };
+  // }
+  
+  if(n.type==='quiz'){
+    el('name').textContent = n.name; el('text').textContent = n.q;
+    el('nextBtn').style.display='none';
+    n.options.forEach(opt=>{
+      const b=document.createElement('button'); b.className=OPT_BASE; b.textContent=opt.label;
+      b.onclick=()=>{
+        document.querySelectorAll('#options button').forEach(x=>x.disabled=true);
+        b.className = OPT_BASE + ' ' + (opt.correct?OPT_GOOD:OPT_BAD);
+        quizAnswers[i] = opt.correct;;
+        el('nextBtn').style.display='inline-block';
+        el('nextBtn').onclick=()=>{ i++; render(); };
+      };
+      el('options').appendChild(b);
+    });
+  }
   if(n.type==='end'){
     el('name').textContent='Selesai';
-
+    const total = nodes.filter(x => x.type === 'quiz').length;
+    const score = Object.values(quizAnswers).filter(Boolean).length;
+    el('text').innerHTML = `LogKyv berhasil online! Skor kuis kamu: <b>${score}/${total}</b>.`;
     el('nextBtn').textContent = 'Main lagi ↺';
-    el('nextBtn').onclick = () => { i = 0; render(); };
+    el('nextBtn').onclick = () => { i = 0; for (const k in quizAnswers) delete quizAnswers[k]; render(); };
   }
 }
 
@@ -315,6 +388,7 @@ try{
   const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
   if(saved && typeof saved.i === 'number' && saved.i < nodes.length){
     i = saved.i;
+    Object.assign(quizAnswers, saved.quizAnswers || {});
   }
 }catch(e){}
 render();

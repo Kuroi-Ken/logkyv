@@ -52,7 +52,7 @@
     >
 </head>
 
-<body class="">
+<body class="max-h-screen">
     <x-landscape>
         
     </x-landscape>
