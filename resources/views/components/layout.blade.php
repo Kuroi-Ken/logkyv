@@ -21,18 +21,19 @@
     }
 
     #orientation-lock.allow-scroll {
-      overflow-y: auto;
-      overflow-x: hidden;
-      min-height: 0;
-      padding-bottom: 2rem;
-      -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+    padding-bottom: 2rem;
+    touch-action: none;
+
     }
 
     #orientation-header {
     position: absolute;
     top: 0;
     left: 100%;
-    width: 89vh;
+    width: 93vh;
     height: 15vw;
     transform-origin: left top;
     transform: rotate(90deg);
