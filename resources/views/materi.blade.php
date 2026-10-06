@@ -1,5 +1,5 @@
 <x-layout :hideheader="true">
-    <div id="orientation-lock" class="px-10 lg:flex-row lg:min-h-[88vh] min-h-screen overflow-hidden gap-5 flex flex-col lg:gap-20 max-w-6xl lg:max-w-full pt-25 lg:py-10">
+    <div id="orientation-lock" class="allow-scroll px-10 lg:flex-row lg:min-h-[88vh] min-h-screen overflow-hidden gap-5 flex flex-col lg:gap-20 max-w-6xl lg:max-w-full pt-20 lg:py-10">
         <div class="lg:max-w-xl w-full">
             <h1 class="text-xs sm:text-sm font-medium uppercase tracking-wider text-[#C77F0F] mb-2 sm:mb-3">Jurnal, Buku Besar, & Neraca Saldo</h1>
             <a href="/game" class="group flex items-center justify-between border border-[#172554]/10 bg-white rounded-2xl p-2.5 sm:p-4">

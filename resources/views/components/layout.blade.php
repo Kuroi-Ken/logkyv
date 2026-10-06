@@ -20,6 +20,14 @@
     transform: rotate(90deg);
     }
 
+    #orientation-lock.allow-scroll {
+      overflow-y: auto;
+      overflow-x: hidden;
+      min-height: 0;
+      padding-bottom: 2rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
     #orientation-header {
     position: absolute;
     top: 0;
@@ -28,6 +36,7 @@
     height: 15vw;
     transform-origin: left top;
     transform: rotate(90deg);
+    z-index: 50;  
     }
 
 
