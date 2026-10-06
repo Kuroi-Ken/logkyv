@@ -1,12 +1,6 @@
-<header id="orientation-header" class="flex h-20 items-center justify-between px-8">
+<header id="orientation-header" class="flex h-15 lg:h-20 items-center justify-between px-8 lg:px-20 bg-white sticky top-0 ">
 
     <a href="/" class="flex items-center gap-3">
-        <img
-            class="h-12 w-20 object-cover"
-            src="{{ asset('assets/no-image.jpg') }}"
-            alt="Logo LogKyv"
-        >
-
         <span class="text-xl font-semibold">
             LogKyv
         </span>

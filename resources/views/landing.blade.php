@@ -17,7 +17,7 @@
             </p>
 
             <a
-                href="/game"
+                href="/menu"
                 class="mt-8 rounded-lg bg-red-200 px-6 py-3 font-medium transition hover:bg-red-300">
                 Mulai Menjelajah
             </a>

@@ -19,3 +19,9 @@ Route::get('/', function () {
 Route::get('/game', function () {
     return view('game');
 });
+Route::get('/menu', function () {
+    return view('menu');
+});
+Route::get('/materi', function () {
+    return view('materi');
+});
