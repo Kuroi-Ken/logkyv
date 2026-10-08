@@ -6,8 +6,8 @@
         <nav aria-label="Navigasi footer" class="flex gap-x-4">
             <a href="/menu" class="hover:text-emerald-800 hover:underline">Menu</a>
             <a href="/materi" class="hover:text-emerald-800 hover:underline">Materi</a>
-            <a href="/quiz" class="hover:text-emerald-800 hover:underline">Quiz</a>
-            <a href="/training" class="hover:text-emerald-800 hover:underline">Training</a>
+            <a href="/quiz" class="hover:text-emerald-800 hover:underline">Game</a>
+            <a href="/training" class="hover:text-emerald-800 hover:underline">Soal & Evaluasi</a>
         </nav>
 
         <p>&copy; {{ date('Y') }} LogKyv</p>
