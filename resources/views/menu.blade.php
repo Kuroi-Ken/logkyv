@@ -1,4 +1,4 @@
-<x-layout class="bg-[#F8F5ED]" :hideheader="true" :hidefooter="true">
+<x-layout class="bg-[#F8F5ED]" :hideheader="true">
 
     <main id="orientation-lock" class="h-[80vh] lg:h-[80vh] px-4 sm:px-7 lg:px-20 py-6 pt-20 lg:pt-6 sm:py-10">
 
