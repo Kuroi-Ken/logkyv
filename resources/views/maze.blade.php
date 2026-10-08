@@ -37,7 +37,7 @@
 
             </div>
         </div>
-        <main class="mx-auto w-full max-w-xl lg:max-w-6xl px-4 pb-6 pt-3">
+        <main class="mx-auto w-full max-w-xl lg:max-w-6xl px-4 pb-6 pt-3 relative -z-999">
             <h1 class="text-2xl font-semibold text-stone-800">Game</h1>
             <p class="mb-4 text-stone-600">
                 Pilih Debit atau Kredit di sebelah kanan, lalu klik kotak kosong di tabel.
@@ -96,4 +96,26 @@
     </div>
 
     <script src="{{ asset('js/maze.js') }}"></script>
+    <script>
+        (function () {
+            var el = document.getElementById('orientation-lock');
+            var mq = window.matchMedia('(max-width: 900px) and (orientation: portrait)');
+            var lastX, lastY;
+
+            el.addEventListener('touchstart', function (e) {
+                lastX = e.touches[0].clientX;
+                lastY = e.touches[0].clientY;
+            }, { passive: true });
+
+            el.addEventListener('touchmove', function (e) {
+                if (!mq.matches) return;
+                var dx = e.touches[0].clientX - lastX;
+                var dy = e.touches[0].clientY - lastY;
+                lastX = e.touches[0].clientX;
+                lastY = e.touches[0].clientY;
+                el.scrollTop += Math.abs(dx) >= Math.abs(dy) ? dx : -dy;
+                e.preventDefault();
+            }, { passive: false });
+        })();
+    </script>
 </x-layout>
