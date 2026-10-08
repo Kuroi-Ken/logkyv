@@ -1,4 +1,4 @@
-<x-layout :hideheader="true">
+<x-layout :hideheader="true" :hidefooter="true">
 
     <div id="orientation-lock" class="mx-auto flex h-[70vh] lg:h-[88vh] overflow-hidden lg:gap-30 max-w-6xl items-center px-8">
 

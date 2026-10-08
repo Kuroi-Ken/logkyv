@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout >
     <div id="orientation-lock" class="w-screen h-screen overflow-hidden flex flex-col">
         <img
             src="{{ asset('assets/classroom.jpg') }}"
@@ -17,11 +17,6 @@
                 <button id="restart"
                     class="rounded-full w-7 h-7 bg-white flex justify-center">
                     <i class="pt-1" data-feather="refresh-cw"></i>
-                </button>
-
-                <button
-                    class="rounded-full w-7 h-7 bg-white flex justify-center">
-                    <i data-feather="volume-2"></i>
                 </button>
 
                 <a href="/materi"

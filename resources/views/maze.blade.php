@@ -29,11 +29,6 @@
 
             <div class="flex gap-4">
 
-                <button
-                    class="rounded-full w-7 h-7 bg-white flex justify-center">
-                    <i data-feather="volume-2"></i>
-                </button>
-
 
             </div>
         </div>

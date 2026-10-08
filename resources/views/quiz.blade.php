@@ -25,11 +25,6 @@
                     <i class="pt-1" data-feather="refresh-cw"></i>
                 </button>
 
-                <button
-                    class="rounded-full w-7 h-7 bg-white flex justify-center">
-                    <i data-feather="volume-2"></i>
-                </button>
-
                 <a href="/training"
                     class="w-7 h-7 rounded-full bg-white flex justify-center">
                     <i data-feather="home" class="w-5 pt-1 h-5"></i>

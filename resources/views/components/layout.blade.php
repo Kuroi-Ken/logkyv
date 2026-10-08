@@ -1,4 +1,5 @@
 @props(['hideheader' => false])
+@props(['hideheader' => false, 'hidefooter' => false])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -40,6 +41,17 @@
     z-index: 50;  
     }
 
+    #orientation-footer {
+      position: absolute;
+      top: 0;
+      left: 12%;
+      width: 93vh;
+      height: 15vw;
+      transform-origin: left top;
+      transform: rotate(90deg);
+      z-index: 50;  
+      }
+
 
   }
 </style>
@@ -69,6 +81,10 @@
     @endif
 
     {{ $slot }}
+
+    @if ($hidefooter ?? true)    
+    <x-footer ></x-footer>
+    @endif
 
     <script>
         feather.replace();

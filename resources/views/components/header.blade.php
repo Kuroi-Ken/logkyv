@@ -6,27 +6,6 @@
         </span>
     </a>
 
-    <button
-        id="soundButton"
-        type="button"
-        class="flex items-center justify-center pr-2"
-        aria-label="Matikan suara"
-    >
-        <i data-feather="volume-2"></i>
-    </button>
-
 </header>
 
-
-<script>
-
-    let soundOn = true;
-
-    document.getElementById('soundButton').onclick = function () {
-        soundOn = !soundOn;
-
-        this.innerHTML = `<i data-feather="${soundOn ? 'volume-2' : 'volume-x'}"></i>`;
-
-        feather.replace();
-    };
-</script>
+    

@@ -61,7 +61,7 @@
                         </p>
 
                         <div class="flex items-center gap-1 sm:gap-2 mt-2 sm:mt-5 text-xs sm:text-sm font-medium text-[#172554]">
-                            Umar Bin Khatab
+                            Umar bin Khatab
                         </div>
                     </div>
 

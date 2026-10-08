@@ -1,6 +1,6 @@
-<x-layout class="bg-[#F8F5ED]" :hideheader="true">
+<x-layout class="bg-[#F8F5ED]" :hideheader="true" :hidefooter="true">
 
-    <main id="orientation-lock" class="lg:max-h-screen  px-4 sm:px-7 lg:px-20 py-6 pt-20 lg:pt-6 sm:py-10">
+    <main id="orientation-lock" class="h-[70vh] lg:h-[80vh] px-4 sm:px-7 lg:px-20 py-6 pt-20 lg:pt-6 sm:py-10">
 
         <div class="mb-6 sm:mb-8">
             <h1 class="text-2xl sm:text-4xl lg:text-5xl font-medium text-[#172554]">
@@ -13,26 +13,26 @@
 
         <div class="flex flex-row gap-3 sm:gap-6 lg:gap-28 items-stretch">
 
-            <a href="" class="group w-1/2 border border-[#172554]/10 rounded-2xl sm:rounded-[28px] bg-white p-2.5 sm:p-3 shadow-lg flex flex-col justify-center">
+            <div class="group w-1/2 border border-[#172554]/10 rounded-2xl sm:rounded-[28px] bg-white p-2.5 sm:p-3 shadow-lg flex flex-col justify-center">
                 <div class="flex flex-col md:flex-row h-full items-center">
 
                     <div class="px-2 sm:px-6 py-2 sm:py-5 text-left">
                         <h2 class="text-base sm:text-2xl lg:text-3xl font-medium text-[#172554]">
-                            Tentang Logkyv
+                            Quotes
                         </h2>
 
                         <p class="text-xs sm:text-sm lg:text-base font-light leading-snug sm:leading-relaxed text-[#475569] mt-1 sm:mt-3 line-clamp-3 md:line-clamp-none">
-                            Platform pembelajaran akuntansi yang membantu kamu memahami materi melalui pembelajaran interaktif, latihan soal, dan permainan.
+                            Lidah orang yang berakal berada di belakang hatinya, sedangkan hati orang bodoh berada di belakang lidahnya.
                         </p>
 
                         <div class="flex items-center gap-1 sm:gap-2 mt-2 sm:mt-5 text-xs sm:text-sm font-medium text-[#172554]">
-                            Pelajari lebih lanjut
+                            Ali bin Abi Thalib
                             <span class="text-[#C77F0F]">→</span>
                         </div>
                     </div>
 
                 </div>
-            </a>
+            </div>
 
             <div class="w-1/2 lg:w-1/3 flex flex-col justify-center">
                 <p class="text-xs sm:text-sm font-medium uppercase tracking-wider text-[#C77F0F] mb-2 sm:mb-3">
