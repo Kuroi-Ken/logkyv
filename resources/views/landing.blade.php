@@ -27,8 +27,8 @@
         <aside class="flex w-2/5 justify-center">
             <div>
                 <img
-                    class="h-auto w-64 object-contain"
-                    src="{{ asset('assets/no-image.jpg') }}"
+                    class="h-auto w-64 object-contain rounded-2xl lg:w-100"
+                    src="{{ asset('assets/account.jpg') }}"
                     alt="Ilustrasi Akuntansi"
                 >
             </div>
