@@ -1,4 +1,4 @@
-<x-layout :hideheader="true":hidefooter="true">
+<x-layout :hideheader="true" :hidefooter="true">
     <div id="orientation-lock" class="allow-scroll px-10 lg:min-h-[88vh] min-h-screen overflow-hidden gap-5 flex flex-col max-w-7xl  pt-20 lg:py-10">
         <div class="lg:max-w-xl w-full">
             <a href="/menu" class="group flex items-center justify-between border w-fit border-[#172554]/10 bg-white rounded-2xl p-2.5 sm:p-4">
