@@ -13,7 +13,7 @@ const nodes = [
       {label:'Ayo kita mulai sekarang', correct:true, fb:''},
       {label:'Waduh sebentar aku belum siap', correct:false, fb:'Hahaha gapapa kalau udah siap bilang aja. Aku temenin kok.'},
     ]},
-  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Renalla', q:'Dalam sistem pembukuan berpasangan, jika suatu akun aset bertambah, pencatatannya dilakukan di sisi mana?',explain:'test',
+  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Renalla', q:'Dalam sistem pembukuan DoubleEntry, jika suatu akun aset bertambah, pencatatannya dilakukan di sisi mana?',explain:'Aset memiliki saldo normal debit, sehingga pertambahan aset dicatat di sisi debit.',
     options:[
       {label:'Debit', correct:true},
       {label:'Kredit', correct:false},
@@ -39,7 +39,7 @@ const nodes = [
       {label:'Dicatat sebagai pendapatan-LRA Rp1.200.000', correct:false},
       {label:'Dicatat sebagai piutang pajak Rp1.200.000', correct:false}
     ]},
-  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Renalla', q:'Pemerintah membeli ATK menggunakan UP sebesar Rp240.000. Akun belanja bertambah di sisi...',explain:'UP menambah kas yang dikelola bendahara; belanja baru diakui ketika uang digunakan untuk pengeluaran yang memenuhi kriteria.',
+  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Renalla', q:'Pemerintah membeli ATK menggunakan UP sebesar Rp240.000. Akun belanja bertambah di sisi...',explain:'Belanja memiliki saldo normal debit sehingga pertambahannya dicatat di sisi debit.',
     options:[
       {label:'Ekuitas', correct:false},
       {label:'Kredit', correct:false},
@@ -332,7 +332,7 @@ function render(){
           ${isRight ? '✓ Benar' : '✗ Salah'}. Jawabanmu: ${jawab}
         </div>
         ${isRight ? '' : `<div class="text-[#12a15a]">Jawaban benar: ${kunci.label}</div>`}
-        ${q.explain ? `<div class="mt-1 opacity-80">${q.explain}</div>` : ''}
+        ${q.explain ? `<div class="mt-1 relative -z-999 opacity-80">${q.explain}</div>` : ''}
       </div>`;
     }).join('');
 
