@@ -20,7 +20,7 @@
 
     
 
-    <div id="orientation-lock" class="allow-scroll pt-16 lg:pt-4">
+    <div id="orientation-lock" class="allow-scroll pt-4 lg:pt-10">
         <div class="pt-4 flex sticky top-0 justify-between px-4 bg-[#F8F5ED] shrink-0">
             <a href="/menu" id="prevBtn"
                 class="rounded-full w-7 h-7 bg-white flex justify-center disabled:opacity-50">
