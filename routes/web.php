@@ -25,3 +25,6 @@ Route::get('/menu', function () {
 Route::get('/materi', function () {
     return view('materi');
 });
+Route::get('/quiz', function () {
+    return view('quiz');
+});

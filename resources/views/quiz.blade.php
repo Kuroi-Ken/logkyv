@@ -112,6 +112,6 @@
 
     </div>
     
-    <script src="{{ asset('js/game.js') }}">
+    <script src="{{ asset('js/quiz.js') }}">
     </script>
 </x-layout>
