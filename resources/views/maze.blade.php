@@ -20,7 +20,7 @@
 
     
 
-    <div id="orientation-lock" class="allow-scroll pt-4 lg:pt-10">
+    <div id="orientation-lock" class="allow-scroll lg:min-h-[88vh] min-h-screen overflow-hidden gap-5 flex flex-col max-w-6xl lg:max-w-full">
         <div class="pt-4 flex sticky top-0 justify-between px-4 bg-[#F8F5ED] shrink-0">
             <a href="/menu" id="prevBtn"
                 class="rounded-full w-7 h-7 bg-white flex justify-center disabled:opacity-50">
@@ -37,7 +37,7 @@
 
             </div>
         </div>
-        <main class="mx-auto w-full max-w-md lg:max-w-6xl px-4 pb-6 pt-3">
+        <main class="mx-auto w-full max-w-xl lg:max-w-6xl px-4 pb-6 pt-3">
             <h1 class="text-2xl font-semibold text-stone-800">Game</h1>
             <p class="mb-4 text-stone-600">
                 Pilih Debit atau Kredit di sebelah kanan, lalu klik kotak kosong di tabel.
