@@ -1,6 +1,6 @@
 <x-layout class="bg-[#F8F5ED]" :hideheader="true" :hidefooter="true">
 
-    <main id="orientation-lock" class="h-[70vh] lg:h-[80vh] px-4 sm:px-7 lg:px-20 py-6 pt-20 lg:pt-6 sm:py-10">
+    <main id="orientation-lock" class="h-[80vh] lg:h-[80vh] px-4 sm:px-7 lg:px-20 py-6 pt-20 lg:pt-6 sm:py-10">
 
         <div class="mb-6 sm:mb-8">
             <h1 class="text-2xl sm:text-4xl lg:text-5xl font-medium text-[#172554]">

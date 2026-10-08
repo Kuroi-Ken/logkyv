@@ -44,7 +44,7 @@
     #orientation-footer {
       position: absolute;
       top: 0;
-      left: 12%;
+      left: 15%;
       width: 93vh;
       height: 15vw;
       transform-origin: left top;
