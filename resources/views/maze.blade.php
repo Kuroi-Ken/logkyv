@@ -37,8 +37,8 @@
 
             </div>
         </div>
-        <main class="mx-auto w-full max-w-3xl lg:max-w-6xl px-4 pb-6 pt-3">
-            <h1 class="text-3xl font-semibold text-stone-800">Game</h1>
+        <main class="mx-auto w-full max-w-md lg:max-w-6xl px-4 pb-6 pt-3">
+            <h1 class="text-2xl font-semibold text-stone-800">Game</h1>
             <p class="mb-4 text-stone-600">
                 Pilih Debit atau Kredit di sebelah kanan, lalu klik kotak kosong di tabel.
                 Pilihan tetap aktif, jadi Anda bisa mengisi beberapa kotak berturut-turut.
