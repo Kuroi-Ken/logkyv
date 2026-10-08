@@ -26,20 +26,31 @@ const nodes = [
   {type:'end'}
 ];
 
-const STORAGE_KEY = 'logkyv-novel-state';
+// key dipisah dari game.js ('logkyv-novel-state'), kalau sama progres game & quiz saling menimpa
+const STORAGE_KEY = 'logkyv-quiz-state';
+const QUIZ_DURATION = 15 * 60 * 1000;   // 15 menit
 function save(){
-  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify({ i, quizAnswers })); }
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify({ i, quizAnswers, startedAt })); }
   catch(e){ /* storage penuh/diblokir browser, aman diabaikan */ }
 }
 let i = 0;
 let typingTimer = null;
 let optionTimer = null;
 let isTyping = false;
-const quizAnswers = {};
+const quizAnswers = {};  
+const firstQuiz = nodes.findIndex(x => x.type === 'quiz');  
+let startedAt = null;   
+let tickTimer = null;
 const el = id => document.getElementById(id);
 const OPT_BASE = "w-full text-left border rounded-[10px] px-3 py-2.5 text-[13.5px] flex justify-between gap-2 border-black/20 dark:border-white/25 bg-transparent";
 const OPT_GOOD = "border-[#12a15a] text-[#12a15a] dark:border-[#5fd383] dark:text-[#5fd383]";
 const OPT_BAD  = "border-[#d5333c] text-[#d5333c] dark:border-[#e8636b] dark:text-[#e8636b]";
+const MENU_BASE = "w-7 h-7 rounded-full text-[12px] font-bold flex items-center justify-center shadow";
+const MENU_IDLE = "bg-white text-[#241a04]";
+const MENU_GOOD = "bg-[#12a15a] text-white";
+const MENU_BAD  = "bg-[#d5333c] text-white";
+const MENU_NOW  = "ring-2 ring-[#c77f0f]";
+const TIMER_BASE = "absolute left-1/2 -translate-x-1/2 h-7 px-3 rounded-full bg-white flex items-center text-[13px] font-bold tabular-nums";
 
 
 function renderProgress(){
@@ -51,8 +62,54 @@ function renderProgress(){
   });
 }
 
+function renderQuizMenu(){
+  const wrap = el('quizMenu'); wrap.innerHTML='';
+  let no = 0;
+  nodes.forEach((n, idx)=>{
+    if(n.type !== 'quiz') return;
+    no++;
+    const a = quizAnswers[idx];
+    const b = document.createElement('button');
+    b.textContent = no;
+    b.setAttribute('aria-label', 'Soal ' + no);
+    b.className = MENU_BASE + ' ' + MENU_IDLE + (idx === i ? ' ' + MENU_NOW : '');
+    b.onclick = ()=>{ i = idx; render(); };   // loncat ke soal, jawaban tetap tersimpan
+    wrap.appendChild(b);
+  });
+}
+
+const timeLeft = () => startedAt === null ? QUIZ_DURATION : Math.max(0, startedAt + QUIZ_DURATION - Date.now());
+const isTimeUp = () => startedAt !== null && timeLeft() === 0;
+
+function renderTimer(){
+  const sec = Math.ceil(timeLeft() / 1000);
+  const mm = String(Math.floor(sec / 60)).padStart(2,'0');
+  const ss = String(sec % 60).padStart(2,'0');
+  el('timer').textContent = mm + ':' + ss;
+  el('timer').className = TIMER_BASE + (startedAt !== null && sec <= 60 ? ' text-[#d5333c]' : '');
+}
+
+function tick(){
+  renderTimer();
+  if(!isTimeUp()) return;
+  clearInterval(tickTimer); tickTimer = null;
+  if(nodes[i].type !== 'end') i = nodes.findIndex(x => x.type === 'end');   // waktu habis -> hasil
+  render();
+}
+
+function startTimer(){   // dipanggil saat pertama kali masuk soal quiz
+  if(startedAt === null){ startedAt = Date.now(); save(); }
+  if(!tickTimer && !isTimeUp()) tickTimer = setInterval(tick, 1000);
+  renderTimer();
+}
+
+function resetTimer(){
+  clearInterval(tickTimer); tickTimer = null;
+  startedAt = null;
+  renderTimer();
+}
+
 function typeText(element, text, speed = 25, callback) {
-    // Hentikan ketikan sebelumnya
     clearInterval(typingTimer);
 
     element.textContent = '';
@@ -101,6 +158,7 @@ function showExplain(n, opt){
 el('restart').onclick = () => {
   i = 0;
   for (const k in quizAnswers) delete quizAnswers[k];
+  resetTimer();
   document.onkeydown = null;   
   render();                    
 };
@@ -109,6 +167,7 @@ function render(){
   const n = nodes[i];
   save();
   renderProgress();
+  renderQuizMenu();
   el('options').innerHTML=''; el('nextBtn').style.display='inline-block';
   el('avatar').style.display='';
   el('stage').style.backgroundImage = n.bg;
@@ -129,7 +188,7 @@ function render(){
       el('avatar').style.display = 'none';
       el('avatar').removeAttribute('src');
   }
-  el('prevBtn').disabled = (i === 0);
+  el('prevBtn').disabled = (i === 0) || (i === firstQuiz);  
   el('nextBtn').textContent = 'Lanjut';
 
   clearInterval(typingTimer);
@@ -146,7 +205,7 @@ function render(){
   }
 
   if(n.type==='game'){
-    el('name').textContent = n.name; typeText(el('text'), n.text, 25);
+    el('name').textContent = n.name; el('text').textContent = n.text;
     el('nextBtn').style.display='none';
     el('prevBtn').onclick = ()=>{ i--; render(); };
     n.options.forEach(opt=>{
@@ -163,7 +222,7 @@ function render(){
   }
 
   if(n.type ==='confuse'){
-    el('name').textContent = n.name; typeText(el('text'), n.text, 25);
+    el('name').textContent = n.name; el('text').textContent = n.text;
     el('nextBtn').style.display='none';
     el('prevBtn').onclick = ()=>{ i--; render(); };
     n.options.forEach(opt=>{
@@ -231,35 +290,56 @@ function render(){
   // }
   
   if(n.type==='quiz'){
-    el('name').textContent = n.name; el('text').textContent = n.q;
+    el('name').textContent = n.name; el('text').textContent = n.q;  
     el('nextBtn').style.display='none';
-    n.options.forEach(opt=>{
+    el('prevBtn').onclick = ()=>{ i--; render(); };
+    startTimer();
+    const showNext = ()=>{
+      el('nextBtn').style.display='inline-block';
+      el('nextBtn').onclick=()=>{ i++; render(); };
+    };
+    const done = quizAnswers[i];
+    const locked = !!done || isTimeUp();
+    n.options.forEach((opt, idx)=>{
       const b=document.createElement('button'); b.className=OPT_BASE; b.textContent=opt.label;
+      if(done && done.choice === idx) b.className = OPT_BASE + ' ' + (opt.correct?OPT_GOOD:OPT_BAD);
+      if(locked) b.disabled = true;
       b.onclick=()=>{
         document.querySelectorAll('#options button').forEach(x=>x.disabled=true);
         b.className = OPT_BASE + ' ' + (opt.correct?OPT_GOOD:OPT_BAD);
-        quizAnswers[i] = opt.correct;;
-        el('nextBtn').style.display='inline-block';
-        el('nextBtn').onclick=()=>{ i++; render(); };
+        quizAnswers[i] = { choice: idx, correct: opt.correct };
+        save();
+        renderQuizMenu();
+        showNext();
       };
       el('options').appendChild(b);
     });
+    if(locked) showNext();
   }
   if(n.type==='end'){
     el('name').textContent='Selesai';
     const total = nodes.filter(x => x.type === 'quiz').length;
-    const score = Object.values(quizAnswers).filter(Boolean).length;
-    el('text').innerHTML = `LogKyv berhasil online! Skor kuis kamu: <b>${score}/${total}</b>.`;
+    const score = Object.values(quizAnswers).filter(a => a.correct).length;
+    const answered = Object.keys(quizAnswers).length;
+    const note = (isTimeUp() && answered < total) ? '<b>Waktu habis!</b> ' : '';
+    el('text').innerHTML = `${note}LogKyv berhasil online! Skor kuis kamu: <b>${score}/${total}</b>.`;
+    el('prevBtn').onclick = ()=>{ i--; render(); };
     el('nextBtn').textContent = 'Main lagi ↺';
-    el('nextBtn').onclick = () => { i = 0; for (const k in quizAnswers) delete quizAnswers[k]; render(); };
+    el('nextBtn').onclick = () => { i = 0; for (const k in quizAnswers) delete quizAnswers[k]; resetTimer(); render(); };
   }
 }
 
 try{
   const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if(saved && typeof saved.i === 'number' && saved.i < nodes.length){
-    i = saved.i;
+  if(saved){
+    if(typeof saved.i === 'number' && saved.i < nodes.length) i = saved.i;
     Object.assign(quizAnswers, saved.quizAnswers || {});
+    if(typeof saved.startedAt === 'number') startedAt = saved.startedAt;
   }
 }catch(e){}
+if(startedAt !== null){
+  if(isTimeUp()) i = nodes.findIndex(x => x.type === 'end');   // refresh setelah waktu habis -> langsung hasil
+  else tickTimer = setInterval(tick, 1000);
+}
+renderTimer();
 render();

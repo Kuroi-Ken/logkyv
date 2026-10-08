@@ -1,5 +1,5 @@
 <x-layout>
-    <div id="orientation-lock" class="w-screen h-screen overflow-hidden flex flex-col">
+    <div id="orientation-lock" class="relative w-screen h-screen overflow-hidden flex flex-col">
         <img
             src="{{ asset('assets/classroom.jpg') }}"
             class="absolute inset-0 -z-10 w-full h-[70%] object-cover"
@@ -7,11 +7,17 @@
 
         <div id="progress" class="shrink-0"></div>
 
-        <div class="mt-4 flex justify-between px-4 shrink-0">
+        <div class="relative mt-4 flex justify-between px-4 shrink-0">
             <button id="prevBtn"
-                class="rounded-full w-7 h-7 bg-white flex justify-center">
+                class="rounded-full w-7 h-7 bg-white flex justify-center disabled:opacity-50">
                 <i class="pt-1" data-feather="chevron-left"></i>
             </button>
+
+            <div id="timer"
+                class="absolute left-1/2 -translate-x-1/2 h-7 px-3 rounded-full bg-white
+                    flex items-center text-[13px] font-bold tabular-nums">
+                15:00
+            </div>
 
             <div class="flex gap-4">
                 <button id="restart"
@@ -30,6 +36,10 @@
                 </a>
             </div>
         </div>
+
+        <div id="quizMenu"
+            class="absolute right-3 top-14 z-40 flex flex-col flex-wrap-reverse gap-1.5"
+            style="max-height: calc(60% - 4.5rem);"></div>
 
         <div id="stage" class="pt-5 shrink-0">
             <div id="badge"></div>
