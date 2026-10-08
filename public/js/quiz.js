@@ -1,27 +1,50 @@
 const nodes = [
-  {type:'dialog', board:'assets/sk4.png', avatar:'/assets/female.png', name:'Raka', text:'Benar sekali. Karena uang persediaan hanya diterima bukan berarti dibelanjakan saat itu. Disoal hanya diberikan surat SP2D saja jadi bendahara bisa saja tidak langsung membelanjakan uang tersebut.'},
-  {type:'game',board:'assets/sk4.png', avatar:'/assets/female.png', name:'Raka',
-    text:'Jadi jurnal apa yang perlu dibuat?.',
+  {type:'dialog', board:'', avatar:'', name:'', text:'(Kamu masih memahami materi yang baru saja kamu pelajari.)'},
+  {type:'dialog', board:'', avatar:'', name:'', text:'(Beberapa materi cukup sulit dipahami akhirnya kamu memutuskan untuk mencatat supaya kamu dapat mengingatnya)'},
+  {type:'dialog', board:'', avatar:'/assets/female.png', name:'???', text:'HAYOOO LAGI NGAPAIN KAMU!!'},
+  {type:'dialog', board:'', avatar:'/assets/female.png', name:'???', text:'Serius banget mana coba kuliat. Ooh materi ini mah gampang.'},
+  {type:'dialog', board:'', avatar:'/assets/female.png', name:'Renalla', text:'Oiya namaku Renalla. Kamu pasti murid baru itukan?'},
+  {type:'dialog', board:'', avatar:'/assets/female.png', name:'Renalla', text:'Daripada kebanyakan nyatet mending kukasih soal aja gimana? itung - itung latihan hihihi.'},
+  {type:'dialog', board:'', avatar:'/assets/female.png', name:'Renalla', text:'Tenang aja soal - soalku gampang kok kurang lebih sama dengan materi yang kamu pelajari.'},
+  {type:'dialog', board:'', avatar:'/assets/female.png', name:'Renalla', text:'Aku punya 5 soal aja dan kukasih kamu 15 menit buat jawab. '},
+  {type:'game',board:'', avatar:'/assets/female.png', name:'Renalla',
+    text:'Gimana? kalau iya aku mulai nih..',
     options:[
-      {label:'Jurnal Pelaksanaan Anggaran saja', correct:false, fb:'No no... coba pahami lagi pernyataan sebelumnya.'},
-      {label:'Dua-duanya', correct:false, fb:'Kayanya pilihan ini selalu jadi pilihan kamu biar cari aman? Sayangnya bukan ini jawabannya hahaha.'},
-      {label:'Jurnal Finansial saja', correct:true, fb:''},
+      {label:'Ayo kita mulai sekarang', correct:true, fb:''},
+      {label:'Waduh sebentar aku belum siap', correct:false, fb:'Hahaha gapapa kalau udah siap bilang aja. Aku temenin kok.'},
     ]},
-  {type:'dialog', board:'assets/sk4.1.png', avatar:'/assets/female.png', name:'Raka', text:'Benar sekali. Karena uang persediaan hanya diterima bukan berarti dibelanjakan saat itu. Disoal hanya diberikan surat SP2D saja jadi bendahara bisa saja tidak langsung membelanjakan uang tersebut.'},
-  {type:'dialog', board:'assets/sk5.png', avatar:'/assets/female.png', name:'Raka', text:'Nah disini baru kita tahu kalau uang persediaan itu dipakai untuk apa jadi kita bisa membuat Jurnal Pelaksanaan Anggarannya.'},
-  {type:'dialog', board:'assets/sk5.1.png', avatar:'/assets/female.png', name:'Raka', text:'Ini untuk Jurnal Finansialnya.'},
-  {type:'dialog', board:'assets/sk5.2.png', avatar:'/assets/female.png', name:'Raka', text:'Ini untuk Jurnal Pelaksanaan Anggarannya.'},
-  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Raka', q:'1) Kenapa error "No version available for php 8.1" muncul di Railway?',
+  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Renalla', q:'Dalam sistem pembukuan berpasangan, jika suatu akun aset bertambah, pencatatannya dilakukan di sisi mana?',explain:'test',
     options:[
-      {label:'Karena Railpack cuma dukung PHP 8.2+', correct:true},
-      {label:'Karena internet lagi lambat', correct:false},
-      {label:'Karena database belum ada', correct:false}
+      {label:'Debit', correct:true},
+      {label:'Kredit', correct:false},
+      {label:'Ekuitas', correct:false},
+      {label:'Pendapatan', correct:false}
     ]},
-  {type:'quiz', board:'/assets/saldo-normal.png', avatar:'/assets/female.png', name:'Raka', q:'2) Apa fungsi "Start Command" dibanding "Build Command"?',
+  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Renalla', q:'Pemerintah daerah menerbitkan SKP pajak hotel sebesar 17.500.000, tetapi wajib pajak belum membayar. Jurnal finansial yang tepat adalah ...',explain:'Penerbitan SKP menimbulkan hak pemerintah berupa piutang dan mengakui pendapatan-LO.',
     options:[
-      {label:'Sama saja, boleh ditukar', correct:false},
-      {label:'Start Command menjalankan server terus-menerus, Build Command cuma jalan sekali saat build', correct:true},
-      {label:'Start Command cuma untuk database', correct:false}
+      {label:'Debit Kas 17.500.000; Kredit Pendapatan-LO Rp17.500.000', correct:false},
+      {label:'Debit Belanja 17.000.000; Kredit Piutang Pajak Hotel 17.500.000', correct:false},
+      {label:'Debit Pendapatan-LO 17.000.000; Kredit Piutang Pajak Hotel 17.500.000', correct:false},
+      {label:'Debit Piutang Pajak Hotel Rp17.500.000; Kredit Pendapatan-LO Rp17.500.000', correct:true}
+    ]},
+  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Renalla', q:'Pendapatan-LO memiliki saldo normal kredit karena pendapatan menambah ekuitas.',explain:'Pendapatan-LO menambah ekuitas melalui surplus atau defisit, sehingga saldo normalnya berada di sisi kredit.',
+    options:[
+      {label:'Benar', correct:true},
+      {label:'Salah', correct:false},
+    ]},
+  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Renalla', q:'Bendahara pengeluaran menerima SP2D-UP sebesar Rp1.200.000. Apa perlakuan yang paling tepat terhadap penerimaan UP tersebut?',explain:'UP menambah kas yang dikelola bendahara; belanja baru diakui ketika uang digunakan untuk pengeluaran yang memenuhi kriteria.',
+    options:[
+      {label:'Langsung dicatat sebagai belanja Rp1.200.000', correct:false},
+      {label:'Dicatat sebagai kas di bendahara pengeluaran Rp1.200.000', correct:true},
+      {label:'Dicatat sebagai pendapatan-LRA Rp1.200.000', correct:false},
+      {label:'Dicatat sebagai piutang pajak Rp1.200.000', correct:false}
+    ]},
+  {type:'quiz', board:'', avatar:'/assets/female.png', name:'Renalla', q:'Pemerintah membeli ATK menggunakan UP sebesar Rp240.000. Akun belanja bertambah di sisi...',explain:'UP menambah kas yang dikelola bendahara; belanja baru diakui ketika uang digunakan untuk pengeluaran yang memenuhi kriteria.',
+    options:[
+      {label:'Ekuitas', correct:false},
+      {label:'Kredit', correct:false},
+      {label:'Debit', correct:true},
+      {label:'Pendapatan', correct:false}
     ]},
   {type:'end'}
 ];
@@ -30,9 +53,15 @@ const nodes = [
 const STORAGE_KEY = 'logkyv-quiz-state';
 const QUIZ_DURATION = 15 * 60 * 1000;   // 15 menit
 function save(){
-  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify({ i, quizAnswers, startedAt })); }
-  catch(e){ /* storage penuh/diblokir browser, aman diabaikan */ }
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify({ i, quizAnswers, startedAt, finished })); }
+  catch(e){}
 }
+
+let finished = false;   // true setelah quiz diakhiri, jawaban terkunci
+const quizIdx = nodes.map((n, idx) => n.type === 'quiz' ? idx : -1).filter(idx => idx >= 0);
+
+const OPT_SEL   = "border-[#c77f0f] text-[#c77f0f] font-bold dark:border-[#f5b942] dark:text-[#f5b942]";
+const MENU_DONE = "bg-[#f5b942] text-[#241a04]";
 let i = 0;
 let typingTimer = null;
 let optionTimer = null;
@@ -69,11 +98,14 @@ function renderQuizMenu(){
     if(n.type !== 'quiz') return;
     no++;
     const a = quizAnswers[idx];
+    let st = MENU_IDLE;
+    if(finished) st = (a && a.correct) ? MENU_GOOD : MENU_BAD;
+    else if(a)   st = MENU_DONE;
     const b = document.createElement('button');
     b.textContent = no;
     b.setAttribute('aria-label', 'Soal ' + no);
-    b.className = MENU_BASE + ' ' + MENU_IDLE + (idx === i ? ' ' + MENU_NOW : '');
-    b.onclick = ()=>{ i = idx; render(); };   // loncat ke soal, jawaban tetap tersimpan
+    b.className = MENU_BASE + ' ' + st + (idx === i ? ' ' + MENU_NOW : '');
+    b.onclick = ()=>{ i = idx; render(); };
     wrap.appendChild(b);
   });
 }
@@ -155,27 +187,50 @@ function showExplain(n, opt){
     };
 }
 
-el('restart').onclick = () => {
-  i = 0;
+function setWarn(msg){
+  let w = el('warn');
+  if(!w){
+    w = document.createElement('div');
+    w.id = 'warn';
+    w.className = 'text-[13px] text-[#d5333c] mt-2';
+    el('options').after(w);
+  }
+  w.textContent = msg;
+}
+
+function trySubmit(){
+  const missing = quizIdx.filter(idx => !quizAnswers[idx]);
+  if(missing.length){
+    setWarn('Belum bisa selesai. Soal yang belum dijawab: ' + missing.map(idx => quizIdx.indexOf(idx) + 1).join(', ') + '. Pilih nomornya di menu kanan atas.');
+    return;
+  }
+  i = nodes.findIndex(x => x.type === 'end');
+  render();
+}
+
+function restartQuiz(){
+  i = 0; finished = false;
   for (const k in quizAnswers) delete quizAnswers[k];
   resetTimer();
-  document.onkeydown = null;   
-  render();                    
-};
+  render();
+}
+el('restart').onclick = restartQuiz;  
 
 function render(){
-  const n = nodes[i];
+  const n = nodes[i];  
+  if(n.type==='end'){ finished = true; clearInterval(tickTimer); tickTimer = null; }
+  if(el('warn')) el('warn').textContent = '';
   save();
   renderProgress();
-  renderQuizMenu();
   el('options').innerHTML=''; el('nextBtn').style.display='inline-block';
+  el('timer').style.display='none'; 
   el('avatar').style.display='';
   el('stage').style.backgroundImage = n.bg;
 
   if (n.board) {
       el('board').style.display = 'block';
       el('board').src = n.board;
-      el('board').className = 'w-[70%] h-auto max-h-[80%] lg:w-[55%] lg:max-h-[90%] object-contain mx-auto';
+      el('board').className = 'w-[60%] h-auto max-h-[80%] lg:w-[55%] lg:max-h-[90%] object-contain mx-auto';
   } else {
       el('board').style.display = 'none';
       el('board').removeAttribute('src');
@@ -183,7 +238,7 @@ function render(){
   if (n.avatar) {
       el('avatar').style.display = 'block';
       el('avatar').src = n.avatar;
-      el('avatar').className = 'w-40 h-40 lg:w-60 lg:h-60 float-left object-contain drop-shadow-lg';
+      el('avatar').className = 'w-40 h-35 lg:w-60 lg:h-60 float-left object-contain drop-shadow-lg';
   } else {
       el('avatar').style.display = 'none';
       el('avatar').removeAttribute('src');
@@ -192,11 +247,11 @@ function render(){
   el('nextBtn').textContent = 'Lanjut';
 
   clearInterval(typingTimer);
-    clearTimeout(optionTimer);
+  clearTimeout(optionTimer);
 
-    typingTimer = null;
-    optionTimer = null;
-    isTyping = false;
+  typingTimer = null;
+  optionTimer = null;
+  isTyping = false;
 
   if(n.type==='dialog'){
     el('name').textContent = n.name; typeText(el('text'), n.text, 25);
@@ -221,111 +276,72 @@ function render(){
     });
   }
 
-  if(n.type ==='confuse'){
-    el('name').textContent = n.name; el('text').textContent = n.text;
-    el('nextBtn').style.display='none';
-    el('prevBtn').onclick = ()=>{ i--; render(); };
-    n.options.forEach(opt=>{
-      const b=document.createElement('button'); b.className=OPT_BASE; b.textContent=opt.label;
-      b.onclick=()=>{
-        if(opt.correct){
-          i++; render();            
-        } else {
-          i = 14; render();     
-        }
-      };
-      el('options').appendChild(b);
-    });
-  }
-
-  // if(n.type==='maze'){
-  //   el('name').textContent = n.name; el('text').textContent = n.text;
-  //   el('nextBtn').style.display='none';
-  //   const grid = [".......","#####.#",".......",".#####.",".#.....",".#.###.","......."];
-  //   let px=0, py=0; const gx=6, gy=6;
-  //   el('avatar').style.display='none';
-  //   const maze = document.createElement('div'); maze.className='grid grid-cols-7 gap-[3px] w-full max-w-[266px] mx-auto';
-  //   el('stage').appendChild(maze);
-  //   const pad = document.createElement('div'); pad.className='grid gap-1 justify-center mt-2.5'; pad.style.gridTemplateColumns='repeat(3,44px)'; pad.style.gridTemplateRows='repeat(3,40px)';
-  //   el('options').appendChild(pad);
-
-  //   function drawMaze(){
-  //     maze.innerHTML='';
-  //     for(let y=0;y<7;y++) for(let x=0;x<7;x++){
-  //       const c=document.createElement('div');
-  //       const wall = grid[y][x]==='#';
-  //       c.className = 'aspect-square rounded flex items-center justify-center text-[15px] ' +
-  //         (wall?'bg-black/25 dark:bg-white/20':(x===gx&&y===gy?'bg-[#12a15a]/20 dark:bg-[#5fd383]/20':'bg-black/5 dark:bg-white/5'));
-  //       if(x===px&&y===py) c.textContent='📦';
-  //       else if(x===gx&&y===gy) c.textContent='🏁';
-  //       maze.appendChild(c);
-  //     }
-  //   }
-  //   function move(dx,dy){
-  //     const nx=px+dx, ny=py+dy;
-  //     if(nx<0||ny<0||nx>6||ny>6) return;
-  //     if(grid[ny][nx]==='#') return;
-  //     px=nx; py=ny; drawMaze();
-  //     if(px===gx&&py===gy){
-  //       el('feedback').textContent='Sampai tujuan!'; el('feedback').className='text-[13px] mt-2 min-h-[18px] text-[#12a15a] dark:text-[#5fd383]';
-  //       el('nextBtn').style.display='inline-block';
-  //       el('nextBtn').onclick=()=>{ document.onkeydown=null; i++; render(); };
-  //     }
-  //   }
-  //   const btn=(label,dx,dy,area)=>{ const b=document.createElement('button'); b.textContent=label;
-  //     b.className='bg-white dark:bg-[#141d33] border border-black/20 dark:border-white/25 rounded-lg flex items-center justify-center text-[15px] active:bg-[#f5b942] active:text-[#241a04]';
-  //     b.style.gridArea=area; b.onclick=()=>move(dx,dy); return b; };
-  //   pad.appendChild(btn('↑',0,-1,'1/2/2/3'));
-  //   pad.appendChild(btn('←',-1,0,'2/1/3/2'));
-  //   pad.appendChild(btn('↓',0,1,'2/2/3/3'));
-  //   pad.appendChild(btn('→',1,0,'2/3/3/4'));
-  //   drawMaze();
-  //   document.onkeydown=(e)=>{
-  //     if(nodes[i]!==n){ document.onkeydown=null; return; }
-  //     if(e.key==='ArrowUp') move(0,-1);
-  //     if(e.key==='ArrowDown') move(0,1);
-  //     if(e.key==='ArrowLeft') move(-1,0);
-  //     if(e.key==='ArrowRight') move(1,0);
-  //   };
-  // }
   
   if(n.type==='quiz'){
-    el('name').textContent = n.name; el('text').textContent = n.q;  
-    el('nextBtn').style.display='none';
+    renderQuizMenu();
+    el('timer').style.display='';
+    el('name').textContent = n.name; el('text').textContent = n.q;
     el('prevBtn').onclick = ()=>{ i--; render(); };
-    startTimer();
-    const showNext = ()=>{
-      el('nextBtn').style.display='inline-block';
-      el('nextBtn').onclick=()=>{ i++; render(); };
-    };
-    const done = quizAnswers[i];
-    const locked = !!done || isTimeUp();
+    if(!finished) startTimer(); else renderTimer();
+
+    const done   = quizAnswers[i];
+    const locked = finished || isTimeUp();
     n.options.forEach((opt, idx)=>{
-      const b=document.createElement('button'); b.className=OPT_BASE; b.textContent=opt.label;
-      if(done && done.choice === idx) b.className = OPT_BASE + ' ' + (opt.correct?OPT_GOOD:OPT_BAD);
+      const b = document.createElement('button');
+      b.textContent = opt.label;
+      b.className = OPT_BASE;
+      if(finished){
+        if(opt.correct) b.className = OPT_BASE + ' ' + OPT_GOOD;
+        else if(done && done.choice === idx) b.className = OPT_BASE + ' ' + OPT_BAD;
+      } else if(done && done.choice === idx){
+        b.className = OPT_BASE + ' ' + OPT_SEL;
+      }
       if(locked) b.disabled = true;
-      b.onclick=()=>{
-        document.querySelectorAll('#options button').forEach(x=>x.disabled=true);
-        b.className = OPT_BASE + ' ' + (opt.correct?OPT_GOOD:OPT_BAD);
+      b.onclick = ()=>{
         quizAnswers[i] = { choice: idx, correct: opt.correct };
-        save();
-        renderQuizMenu();
-        showNext();
+        render();
       };
       el('options').appendChild(b);
     });
-    if(locked) showNext();
+
+    const isLast = i === quizIdx[quizIdx.length - 1];
+    el('nextBtn').style.display = 'block';
+    el('nextBtn').className = 'mb-3 bottom-0 ml-auto sticky  bg-[#c77f0f] dark:bg-[#f5b942] text-[#241a04] font-bold px-4 py-2 rounded-[10px] text-[13px]';
+    el('nextBtn').textContent = (isLast && !finished) ? 'Selesai' : 'Lanjut';
+    el('nextBtn').onclick = ()=>{
+      if(isLast && !finished) return trySubmit();
+      i++; render();
+    };
   }
   if(n.type==='end'){
-    el('name').textContent='Selesai';
-    const total = nodes.filter(x => x.type === 'quiz').length;
-    const score = Object.values(quizAnswers).filter(a => a.correct).length;
-    const answered = Object.keys(quizAnswers).length;
-    const note = (isTimeUp() && answered < total) ? '<b>Waktu habis!</b> ' : '';
-    el('text').innerHTML = `${note}LogKyv berhasil online! Skor kuis kamu: <b>${score}/${total}</b>.`;
+    const total    = quizIdx.length;
+    const answered = quizIdx.filter(idx => quizAnswers[idx]).length;
+    const benar    = quizIdx.filter(idx => quizAnswers[idx] && quizAnswers[idx].correct).length;
+    const note     = answered < total ? '<b>Waktu habis!</b> ' : '';
+
+    const review = quizIdx.map(idx => {
+      const q = nodes[idx], a = quizAnswers[idx];
+      const isRight = !!(a && a.correct);
+      const kunci = q.options.find(o => o.correct);
+      const jawab = a ? q.options[a.choice].label : 'Tidak dijawab';
+      const border = isRight ? 'border-[#12a15a]/40' : 'border-[#d5333c]/40';
+
+      return `<div class="mt-3 p-3 rounded-[10px] border ${border} text-[13px]">
+        <div class="font-bold">${q.q}</div>
+        <div class="mt-1 ${isRight ? 'text-[#12a15a]' : 'text-[#d5333c]'}">
+          ${isRight ? '✓ Benar' : '✗ Salah'}. Jawabanmu: ${jawab}
+        </div>
+        ${isRight ? '' : `<div class="text-[#12a15a]">Jawaban benar: ${kunci.label}</div>`}
+        ${q.explain ? `<div class="mt-1 opacity-80">${q.explain}</div>` : ''}
+      </div>`;
+    }).join('');
+
+    el('text').innerHTML = `<div class="w-full">${note}Kuis selesai! Skor kamu: <b>${benar}/${total}</b>.
+    <div class="mt-2 font-bold">Pembahasan:</div>${review}
+    <button id="again" class="sticky bottom-3 ml-auto mt-4 block bg-[#c77f0f] dark:bg-[#f5b942] text-[#241a04] font-bold px-4 py-2 rounded-[10px] text-[13px] shadow-lg">Main lagi ↺</button></div>`;
+    el('again').onclick = restartQuiz;
+    el('nextBtn').style.display = 'none';
     el('prevBtn').onclick = ()=>{ i--; render(); };
-    el('nextBtn').textContent = 'Main lagi ↺';
-    el('nextBtn').onclick = () => { i = 0; for (const k in quizAnswers) delete quizAnswers[k]; resetTimer(); render(); };
   }
 }
 
@@ -335,10 +351,11 @@ try{
     if(typeof saved.i === 'number' && saved.i < nodes.length) i = saved.i;
     Object.assign(quizAnswers, saved.quizAnswers || {});
     if(typeof saved.startedAt === 'number') startedAt = saved.startedAt;
+    finished = !!saved.finished;
   }
 }catch(e){}
-if(startedAt !== null){
-  if(isTimeUp()) i = nodes.findIndex(x => x.type === 'end');   // refresh setelah waktu habis -> langsung hasil
+if(startedAt !== null && !finished){
+  if(isTimeUp()) i = nodes.findIndex(x => x.type === 'end');
   else tickTimer = setInterval(tick, 1000);
 }
 renderTimer();

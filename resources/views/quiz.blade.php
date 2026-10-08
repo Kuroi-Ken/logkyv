@@ -30,7 +30,7 @@
                     <i data-feather="volume-2"></i>
                 </button>
 
-                <a href="/"
+                <a href="/training"
                     class="w-7 h-7 rounded-full bg-white flex justify-center">
                     <i data-feather="home" class="w-5 pt-1 h-5"></i>
                 </a>
@@ -106,7 +106,7 @@
 
                 <button
                     id="nextBtn"
-                    class="mb-3 absolute bottom-0 right-5
+                    class="mb-3 absolute bottom-0 right-3
                         bg-[#c77f0f]
                         dark:bg-[#f5b942]
                         text-[#241a04]

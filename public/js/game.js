@@ -240,7 +240,7 @@ function render(){
   if (n.board) {
       el('board').style.display = 'block';
       el('board').src = n.board;
-      el('board').className = 'w-[70%] h-auto max-h-[80%] lg:w-[55%] lg:max-h-[90%] object-contain mx-auto';
+      el('board').className = 'w-[60%] h-auto max-h-[80%] lg:w-[55%] lg:max-h-[90%] object-contain mx-auto';
   } else {
       el('board').style.display = 'none';
       el('board').removeAttribute('src');

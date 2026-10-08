@@ -63,9 +63,6 @@
 </head>
 
 <body class="max-h-screen bg-[#F8F5ED]">
-    <x-landscape>
-        
-    </x-landscape>
 
     @if ($hideheader ?? true)    
     <x-header ></x-header>

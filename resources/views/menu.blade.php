@@ -1,6 +1,6 @@
 <x-layout class="bg-[#F8F5ED]" :hideheader="true">
 
-    <main id="orientation-lock" class="lg:max-h-screen px-4 sm:px-7 lg:px-20 py-6 pt-20 lg:pt-6 sm:py-10">
+    <main id="orientation-lock" class="lg:max-h-screen  px-4 sm:px-7 lg:px-20 py-6 pt-20 lg:pt-6 sm:py-10">
 
         <div class="mb-6 sm:mb-8">
             <h1 class="text-2xl sm:text-4xl lg:text-5xl font-medium text-[#172554]">
@@ -59,7 +59,7 @@
                         </span>
                     </a>
 
-                    <a href="" class="group flex items-center justify-between border border-[#172554]/10 bg-white rounded-2xl p-2.5 sm:p-4">
+                    <a href="/training" class="group flex items-center justify-between border border-[#172554]/10 bg-white rounded-2xl p-2.5 sm:p-4">
                         <div class="flex items-center gap-2 sm:gap-4">
                             <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#F8F5ED] flex items-center justify-center shrink-0">
                                 <i data-feather="help-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#172554]"></i>
@@ -67,7 +67,7 @@
 
                             <div>
                                 <h3 class="text-xs sm:text-base font-medium text-[#172554]">
-                                    Soal & Kuis
+                                    Soal & Evaluasi
                                 </h3>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                         </span>
                     </a>
 
-                    <a href="" class="group flex items-center justify-between border border-[#172554]/10 bg-white rounded-2xl p-2.5 sm:p-4">
+                    <a href="/maze" class="group flex items-center justify-between border border-[#172554]/10 bg-white rounded-2xl p-2.5 sm:p-4">
                         <div class="flex items-center gap-2 sm:gap-4">
                             <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#F8F5ED] flex items-center justify-center shrink-0">
                                 <i data-feather="monitor" class="w-4 h-4 sm:w-5 sm:h-5 text-[#172554]"></i>

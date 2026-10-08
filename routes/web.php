@@ -28,3 +28,9 @@ Route::get('/materi', function () {
 Route::get('/quiz', function () {
     return view('quiz');
 });
+Route::get('/maze', function () {
+    return view('maze');
+});
+Route::get('/training', function () {
+    return view('training');
+});
